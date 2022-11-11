@@ -48,13 +48,13 @@
             <p>Em yêu<i class="fas fa-heart" style="color: red"></i></p>
           </div>
         </div>
-        @foreach ($users as $user)
+
         <div class="write-post-container">
           <div class="user-profile">
             <img src="{{asset('frontend/images/user.jpg')}}" />
             <div>
               <p>
-                {{$user->name}}
+                {{$name}}
                 <i class="fas fa-check-circle" style="color: #1876f2"></i>
               </p>
               <small>Public <i class="fas fa-caret-down"></i></small>
@@ -79,7 +79,7 @@
           </div>
         </div>
 </form>
-        @endforeach
+
         <div class="post-container">
           <div class="post-row">
             <div class="user-profile">
