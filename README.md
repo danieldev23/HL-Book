@@ -1,4 +1,4 @@
-<h2 align="center">HL Book is a brand new platform. Developed based on Facebook and Tiktok.</h2>
+<h2 align="center">HL Book is a brand new platform. Developed based on Facebook and Tiktok. Bring great value to business people.</h2>
 <h1 align="center">Hi , I'm Dang Quoc Huy <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
 <p align="center">
   <a href="https://github.com/DenverCoder1/readme-typing-svg">
@@ -177,4 +177,4 @@
 <hr/>
 
 -   Credit: [Danieldev23](https://github.com/danieldev23)
--   Last Edited on: 20/03/2022
+-   Last Edited on: 05/12/2022
