@@ -14,6 +14,7 @@
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
+        "munafio/chatify": "^1.5",
         "nyholm/psr7": "^1.5",
         "symfony/psr-http-message-bridge": "^2.1",
         "unsplash/unsplash": "^3.2"

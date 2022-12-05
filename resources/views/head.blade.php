@@ -23,7 +23,7 @@
 
         <ul>
           <li><img src="{{asset('frontend/images/notification.png')}}"/></li>
-          <li><img src="{{asset('frontend/images/email.png')}}"/></li>
+          <li><a href="/chatify"><img src="{{asset('frontend/images/email.png')}}"/></a></li>
           <li><img src="{{asset('frontend/images/tv.png')}}"/></li>
         </ul>
       </div>
