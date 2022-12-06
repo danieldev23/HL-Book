@@ -85,7 +85,7 @@
         <div class="internet-connection">
             <span class="ic-connected">Connected</span>
             <span class="ic-connecting">Connecting...</span>
-            <span class="ic-noInternet">No internet access</span>
+            <span class="ic-noInternet"></span>
         </div>
         {{-- Messaging area --}}
         <div class="m-body messages-container app-scroll">
