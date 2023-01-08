@@ -69,7 +69,10 @@ footer {
     padding: 20px;
     max-width: 400px;
 }
-
+form i {
+    margin-left: -30px;
+    cursor: pointer;
+}
 .colm-form .form-container input,
 .colm-form .form-container .btn-login {
     width: 100%;

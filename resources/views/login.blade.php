@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{   $title  }}</title>
     <link rel="stylesheet" href="{{asset('frontend/css/login.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <main>
@@ -27,7 +28,7 @@
                       </div>
                       <div class="text-field ip">
                         <label for="username3">Password</label>
-                        <input autocomplete="off" type="password" id="username3" placeholder="Enter your password" name="password" />
+                        <input autocomplete="off" type="password" id="password" placeholder="Enter your password" name="password" />
                         @include('alert')
 
                       </div>

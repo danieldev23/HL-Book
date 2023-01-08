@@ -27,7 +27,7 @@ class LoginController extends Controller
             return redirect()
                 ->route('home');
         }
-        Session::flash('error', 'Email hoặc mật khẩu không đúng');
+        Session::flash('error', 'Email hoặc mật khẩu không đúng!');
         return redirect()
             ->back();
     }

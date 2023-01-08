@@ -20,38 +20,30 @@ function up() {
 
 
 }
-const api_url =
-      "https://employeedetails.free.beeceptor.com/my/api/path";
+let alerts = document.querySelectorAll('.alert');
+alerts.forEach(item=>{
+    item.addEventListener('click', function(event){
+        if(event.target.classList.contains('close')){
+            item.style.display = 'none';
+        }
+    })
+})
+window.addEventListener('offline', function(){
+    document.getElementById('success').style.display = 'none';
+    document.getElementById('error').style.display = 'grid';
+})
+window.addEventListener('online', function(){
+    document.getElementById('error').style.display = 'none';
+    document.getElementById('success').style.display ='grid';
+});
 
-// Defining async function
-async function getapi(url) {
-
-    // Storing response
-    const response = await fetch(url);
-
-    // Storing data in form of JSON
-    var data = await response.json();
-    console.log(data);
-    if (response) {
-        hideloader();
-    }
-    show(data);
-}
-// Calling that async function
-getapi(api_url);
-
-fetch('https://reqres.in/api/users')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-// function fetchData() {
-//
-//   fetch('https://reqres.in/api/users')
-//   .then(res => res.json())
-//   .then(data => {
-//     console.log(data.data)
-//     // const html = articles.articles.map(user => {
-//     //   return `<img src="${user.avatar}" alt="${user.firt_name}"`
-//     // })
-//   })
-// }
+let menu = document.getElementById('menu');
+document.addEventListener('contextmenu', function(event){
+    event.preventDefault()
+    menu.style.display = 'block'
+    menu.style.top = event.y + 'px'
+    menu.style.left = event.x + 'px'
+})
+document.addEventListener('click', function(){
+    menu.style.display = 'none'
+})

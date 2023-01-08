@@ -13,14 +13,19 @@ class SignupController extends Controller
     }
 
     public function store(Request $request) {
-        $id = mt_rand( 1000000000, 9999999999 );
-        $username = $request->input('username');
-        $name = $request->input('name');
+
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        // $id = mt_rand(1, 50);
+        // $user_id = $last_name .'.'.$id;
+        $username = mb_strtolower($last_name, 'UTF-8') . '' .rand();
+        $name = $first_name. ' ' .$last_name;
         $birthday = $request->input('birthday');
         $email = $request->input('email');
         $password = bcrypt($request->input('password'));
         $user = array(
-            'id' => $id,
+            // 'id' => $id,
+            // 'user_id' => $user_id,
             'username' => $username, 
             'name' => $name,
             'birthday' => $birthday,

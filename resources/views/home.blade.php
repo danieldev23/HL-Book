@@ -1,19 +1,26 @@
 @include('head')
+<div id="menu">
+  <ul>
+    <li><i class="fa-solid fa-share"></i> Share</li>
+    <li><i class="fa-solid fa-trash"></i> Restore</li>
+    <li><i class="fa-solid fa-circle-info"></i> More</li>
+  </ul>
+</div>
     <div class="container">
       <!-- ----------------------- left-sidebar ----------------------- -->
       <div class="left-sidebar">
         <div class="imp-links">
-          <a href="#"><img src="{{asset('frontend/images/newspaper.png')}}" /> Lastes News</a>
-          <a href="#"><img src="{{asset('frontend/images/people.png')}}" /> Friends</a>
-          <a href="#"><img src="{{asset('frontend/images/meeting.png')}}" /> Group</a>
+          <a href="#"><img src="{{asset('frontend/images/newspaper.png')}}" /> Tin Mới Nhất</a>
+          <a href="#"><img src="{{asset('frontend/images/people.png')}}" /> Bạn Bè</a>
+          <a href="#"><img src="{{asset('frontend/images/meeting.png')}}" /> Nhóm</a>
           <a href="#"
             ><img src="{{asset('frontend/images/marketplace.png')}}" /> MarketPlace</a
           >
           <a href="#"><img src="{{asset('frontend/images/movie.png')}}" /> Watch</a>
-          <a href="#">See More</a>
+          <a href="#">Xem Thêm</a>
         </div>
         <div class="shortcut-links">
-          <p>Your Shortcuts</p>
+          <p>Lối Tắt Của Bạn</p>
           <a href="#"><img src="{{asset('frontend/images/mac.avif')}}" /> Web Developer</a>
           <a href="#"
             ><img src="{{asset('frontend/images/shortcut-2.png')}}" /> Web Designer</a
@@ -57,20 +64,20 @@
                 {{$name}}
                 <i class="fas fa-check-circle" style="color: #1876f2"></i>
               </p>
-              <small>Public <i class="fas fa-caret-down"></i></small>
+              <small>Công khai <i class="fas fa-caret-down"></i></small>
             </div>
           </div>
           <form action="/post/store" method="post" enctype="multipart/form-data">
                       {{ @csrf_field() }}
           <div class="post-input-container">
             <textarea
-              name="input_text"
+              name="post_content"
               id=""
               rows="3"
-              placeholder="What's on your mind, Huy?"></textarea>
+              placeholder="Bạn đang suy nghĩ gì vậy, Huy?"></textarea>
               <input type="file" style="color: #fff" name="file" class="custom-file-input" id="chooseFile" accept="image/*">
               
-              <button class="btn-post"><img style="margin:  0" src="{{asset('frontend/images/new-post.png')}}" width="16px">Post</button>
+              <button class="btn-post"><img style="margin:  0" src="{{asset('frontend/images/new-post.png')}}" width="16px">Đăng</button>
             <div class="add-post-links">
               <a href="#"><img src="{{asset('frontend/images/live.png')}}" /> Live Video</a>
               <a href="#"><img src="{{asset('frontend/images/camera.png')}}" /> Photo/Video</a>
@@ -86,26 +93,24 @@
               <img src="{{asset('frontend/images/user.jpg')}}" />
               <div>
                 <p>
-                  Dang Quoc Huy
+                  {{$name}}
                   <i class="fas fa-check-circle" style="color: #1876f2"></i>
                 </p>
-                <span>October 04 2022, 12:52 pm</span>
+                <span>04 tháng 10, 2022, lúc 12:52</span>
               </div>
             </div>
             <a href="#"><i class="fas fa-ellipsis-v"></i></a>
           </div>
 
           <p class="post-text">
-            I am a <span>Web Developer. </span>I can provide clean code and
-            pixel perfect design. I also make the website more & more
-            interactive with web animations. <br /><a href="#">#developer</a>
+            Tôi là {{$name}}. Hiện tại tôi đang là 1 <span>Software Engineer </span>của Microsoft. Với niềm đam mê vô tận với lập trình. Tôi đã sáng tạo ra mạng xã hội hoàn toàn mới cho giới trẻ.<br /><a href="#">#gioitre</a>
             <br />
-            <a href="#">#coder</a> <br /><a href="#">#blockchain</a>
+            <!-- <a href="#">#coder</a> <br /><a href="#">#blockchain</a> -->
           </p>
-          <img src="{{asset('frontend/images/fbcover.jpg')}}" class="post-img" />
+          <img src="https://www.youthcollaboratory.org/sites/default/files/styles/full/public/2019-05/naassom-azevedo-541451-unsplash.jpg?h=3f04afe0&itok=NfFNjwU5" class="post-img" />
           <div class="post-row">
             <div class="activity-icons">
-              <div><img src="{{asset('frontend/images/positive-vote.png')}}" /> 50k</div>
+              <div><img src="{{asset('frontend/images/positive-vote.png')}}" /> 589k</div>
               <div><img src="{{asset('frontend/images/comment.png')}}" /> 15k</div>
               <div><img src="{{asset('frontend/images/share.png')}}" /> 3k</div>
             </div>
@@ -113,15 +118,19 @@
               <img src="{{asset('frontend/images/user.jpg')}}" /> <i class="fas fa-caret-down"></i>
             </div>
           </div>
+          <div width=531 height=340>
+          <div class="fb-comments" data-href="https://dangquochuy.xyz/" data-width="" width=550 data-numposts="5"></div>
+        </div>
         </div>
 
         <div class="post-container">
           <div class="post-row">
             <div class="user-profile">
-              <img src="{{$avatar}}" />
+              <img src="https://scontent.fvii1-1.fna.fbcdn.net/v/t39.30808-6/321605235_834400964284806_217113060558599026_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1QJv3H5ha1cAX-AdIYX&_nc_ht=scontent.fvii1-1.fna&oh=00_AfAvGA_Zc2A0b51N-ndKIcryPUmqkpMymqHtWu1JNYKw5Q&oe=63BC9015" />
               <div>
                 <p>
-                  {{$name_random}}
+                  <!-- {{$name_random}} -->
+                  VnExpress
                   <i class="fas fa-check-circle" style="color: #1876f2"></i>
                 </p>
                 <span>{{date("F j, Y, g : i a")}}</span>
@@ -151,26 +160,26 @@
         <div class="post-container">
           <div class="post-row">
             <div class="user-profile">
-              <img src="https://scontent.fvii1-1.fna.fbcdn.net/v/t39.30808-6/287471361_3175544496040437_8181350988583424254_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nO-66uPhxW8AX8spQS9&_nc_ht=scontent.fvii1-1.fna&oh=00_AfBh3caMDzACvLbuLqEESWpSSs4Oqq94kvxUtFXQ2NF4sA&oe=6371F6B1" />
+              <img src="https://scontent.fvii1-1.fna.fbcdn.net/v/t39.30808-6/322049291_1259074301310069_8119295995915632222_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qQ-HCWFhdgYAX8TPQxp&_nc_ht=scontent.fvii1-1.fna&oh=00_AfAeArsX_jzsO5iRWyzpKEqeuXGTtJYPdQbhvTKH37KuJQ&oe=63BD67EB" />
               <div>
                 <p>
                   Lê Bảo Bình
                   <i class="fas fa-check-circle" style="color: #1876f2"></i>
                 </p>
-                <span>December 25 2022, 20:00 pm</span>
+                <span>26 tháng 12, 2022 lúc 20:25</span>
               </div>
             </div>
             <a href="#"><i class="fas fa-ellipsis-v"></i></a>
           </div>
           <p class="post-text">
-          THƯƠNG EM ĐẾN GIÀ | LÊ BẢO BÌNH | OFFICIAL MUSIC VIDEO
-            <!-- I am a <span>Web Developer. </span>I can provide clean code and
-            pixel perfect design. I also make the website more & more
-            interactive with web animations. <br /><a href="#">#developer</a> -->
+         <a href="">#1 trong danh mục âm nhạc Thịnh hành </a>
+         <br/>
+CON HỨA SẼ VỀ - LÊ BẢO BÌNH | OFFICIAL MUSIC VIDEO | NHẠC XUÂN 2023 - MẸ, XUÂN NÀY CON VẪN THA HƯƠNG
+
             <br />
-            <!-- <a href="#">#coder</a> <br /><a href="#">#blockchain</a> -->
+
           </p>
-          <iframe class="post-video" height="315" src="https://www.youtube.com/embed/8zRy02Wl1JA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="post-video" height="315" src="https://www.youtube.com/embed/xPKU5WkLOqA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div class="post-row">
             <div class="activity-icons">
         <div><img src="{{asset('frontend/images/positive-vote.png')}}" /> 500k</div>
@@ -277,11 +286,13 @@
             <a href="#">#coder</a> <br /><a href="#">#blockchain</a>
           </p>
           <video
-            src="{{asset('frontend/images/video.mp4')}}"
+            
             class="post-video"
             autoplay
+            controls
             loop
-            muted></video>
+            <source src="https://cdn.glitch.global/a8842503-92c0-4cc3-8dd2-ec46ac7c827b/Finance%20Business%20Video%20Background.mp4?v=1651065395675" type="video/mp4">
+          </video>
           <div class="post-row">
             <div class="activity-icons">
         <div><img src="{{asset('frontend/images/positive-vote.png')}}" /> 50k</div>
@@ -316,7 +327,7 @@
             <br />
             <a href="#">#coder</a> <br /><a href="#">#blockchain</a>
           </p>
-          <iframe class="post-video" height="315" src="https://www.youtube.com/embed/3wSrigLLB2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="post-video" height="315" src="https://www.youtube.com/embed/d8rXacGdR_4&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div class="post-row">
             <div class="activity-icons">
         <div><img src="{{asset('frontend/images/positive-vote.png')}}" /> 50k</div>
@@ -343,38 +354,38 @@
           </div>
        </div>
        <div class="event">
-          <h3 class="heading">Upcoming Events <span>See all</span></h3>
-          <img src="{{asset('frontend/images/eve.jpg')}}" alt="event-img">
+          <h3 class="heading">Sự Kiện Sắp Tới <span>Xem tất cả</span></h3>
+          <img src="{{asset('frontend/images/tet.jpg')}}" alt="event-img">
           <div class="event-date">
              <h3>21 <b>july</b></h3>
-             <h4>United state of America <span>New York City</span></h4>
+             <h4>Tết Nguyên Đán Quý Mão <span>Tỉnh Nghệ An</span></h4>
           </div>
-          <button><i class="fa-regular fa-star"></i> interested</button>
+          <button><i class="fa-regular fa-star"></i> Quan tâm</button>
        </div>
        <div class="create-page">
           <ul>
              <li>
                 <i class="fa-solid fa-circle-plus"></i>
-                <h4>Create Page &amp; Groups</h4>
+                <h4>Tạo Trang &amp; Nhóm</h4>
                 <i class="fa-solid fa-magnifying-glass"></i>
              </li>
              <li>
-                <img src="{{asset('frontend/images/group.jpg')}}" alt="groups">
+                <img src="https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="groups">
              </li>
              <li>
-                <b>Dveloper Community <span>200k Members</span></b>
-                <button>Join Group</button>
+                <b>Dveloper Community <span>200k Thành viên</span></b>
+                <button>Tham gia</button>
              </li>
           </ul>
        </div>
         <div class="sidebar-title">
-          <h4>Advertisement</h4>
-          <a href="#">Close</a>
+          <h4>Quảng cáo</h4>
+          <a href="#">Đóng</a>
         </div>
         <video src="{{asset('frontend/images/ads.mp4')}}" class="ads" autoplay loop muted></video>
         <div class="sidebar-title">
-          <h4>Conversation</h4>
-          <a href="#">Hide Chat</a>
+          <h4>Trò chuyện</h4>
+          <a href="#">Ẩn</a>
         </div>
 
         <div class="online-list">
@@ -407,5 +418,31 @@
         </div>
       </div>
     </div>
+          <div class="alert" id="error">
+        <i class="fa-solid fa-wifi icon"></i>
+        <div class="content">
+            <div class="title">
+                Wifi disconnect!
+            </div>
+            <div class="des">
+                Please check your connection
+            </div>
+        </div>
+        <i class="fa-solid fa-x close"></i>
+    </div>
 
+    <div class="alert" id="success">
+        <i class="fa-solid fa-wifi icon"></i>
+        <div class="content">
+            <div class="title">
+                Wifi connected!
+            </div>
+            <div class="des">
+                Successfully connected
+            </div>
+        </div>
+        <i class="fa-solid fa-x close"></i>
+    </div>
+    <div>
+    </div>
 @include('footer')
